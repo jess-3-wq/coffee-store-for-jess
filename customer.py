@@ -2,6 +2,14 @@ class Customer:
     def __init__(self,name):
         self.name = name
 
+    def create_order(self, coffee, price):
+        if not isinstance(coffee, Coffee):
+            raise TypeError('Should provide a coffee instance')
+        new_order = Order(self ,coffee, price) 
+        Order.all_orders.append(new_order)
+        return new_order   
+
+
     @property 
     def name(self):
         return self._name  
@@ -14,6 +22,8 @@ class Customer:
             raise ValueError('Name must be between 1 and 15 characters.')
         self._name = value    
 
+from order import Order
+from coffee import Coffee
 
 # customer = Customer("Jessereeeeeeeeeerrrrrreeeeeeerrrreeee")
 # print(Customer)            
