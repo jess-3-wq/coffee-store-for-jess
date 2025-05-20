@@ -1,25 +1,26 @@
+from order import Order
+
 class Coffee:
     def __init__(self, name):
-        self._name = name
         if not isinstance(name, str):
-            raise TypeError ('Name must be a string')
+            raise TypeError('Name must be a string')
         if len(name) < 3:
-            raise ValueError ('Name must be at least three characters')
-
-    def num_orders(self):
-        return sum(1 for order in Order.all_orders if order.coffee == self)
-
-    def average_price(self):
-        prices = [order.price for order in Order.all_orders if order.coffee == self]
-        if not prices:
-        return 0
-        return sum(prices) / len(prices)
+            raise ValueError('Name must be at least three characters')
+        self._name = name
 
     @property
     def name(self):
         return self._name
 
-    from order import Order    
+    def orders(self):
+        return [order for order in Order.all() if order.coffee == self]
 
-# coffee = Coffee("Latte")
-# print(Coffee)
+    def customers(self):
+        return list({order.customer for order in self.orders()})
+
+    def num_orders(self):
+        return len(self.orders())
+
+    def average_price(self):
+        prices = [order.price for order in self.orders()]
+        return sum(prices) / len(prices) if prices else 0

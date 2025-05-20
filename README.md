@@ -1,5 +1,5 @@
 # coffee-store-for-jess
-Welcome to Jesse's Coffee-Shop Challenge! This project is a Python-based simulation of a coffee shop with three primary models: Customer, Coffee, and Order. Each model is designed with strict attribute validation.
+Welcome to Jesse's Coffee-Shop Challenge! This project is a Python-based simulation of a coffee shop with three models: Customer, Coffee, and Order. Each model is designed with strict attribute validation.
 
  Project Structure
  coffee-shop-challenge/
