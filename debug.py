@@ -10,14 +10,14 @@ jess = Customer("Jess")
 murima = Customer("Murima")
 
 
-jess.create_order(latte, 4.5)
-jess.create_order(mocha, 3.0)
-murima.create_order(latte, 5.0)
+jess.create_order(dormans, 4.5)
+jess.create_order(doubles, 3.0)
+murima.create_order(dormans, 5.0)
 
 
-print("Latte orders:", latte.num_orders()) 
-print("Latte average price:", latte.average_price())  
-print("Latte customers:", [c.name for c in latte.customers()])  
+print("Dormans orders:", dormans.num_orders()) 
+print("Dormans average price:", dormans.average_price())  
+print("Dormans customers:", [c.name for c in dormans.customers()])  
 
 print("Jess's orders:", jess.orders())
 print("Murima's coffees:", [c.name for c in murima.coffees()])
